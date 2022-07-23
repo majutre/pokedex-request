@@ -3,6 +3,7 @@ import pokedexController from '../controllers/pokedex.controller';
 
 const router = express.Router();
 
+router.get('/', pokedexController.indexRoute);
 router.get('/pokemon/:limit?/:offset?', pokedexController.listPokemon);
 router.get('/search/:pokemon', pokedexController.searchPokemon);
 

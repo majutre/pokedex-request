@@ -3,6 +3,10 @@ import { Request, Response, NextFunction } from "express";
 import { Pokemon } from '../models/interfaces/pokemon.interface';
 import { Result } from '../models/interfaces/result.interface';
 
+const indexRoute = (req: Request, res: Response) => {
+  return res.status(200).json('Hello!');
+}
+
 const listPokemon = async (req: Request, res: Response, next: NextFunction) => {
   let limit = req.params.limit
   let offset = req.params.offset
