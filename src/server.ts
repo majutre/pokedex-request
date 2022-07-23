@@ -1,4 +1,5 @@
 import app from "./app";
-import { PORT } from "./constants/constants"
+
+export const PORT = 5000;
 
 app.listen(PORT, () => console.log(`Server up! Listening on port ${PORT}`));
