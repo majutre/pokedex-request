@@ -2,7 +2,7 @@
   "name": "pokedex-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/app.js",
   "scripts": {
     "build": "npx tsc",
     "start": "node ./dist/server.js",
@@ -30,5 +30,8 @@
     "nodemon": "^2.0.19",
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
