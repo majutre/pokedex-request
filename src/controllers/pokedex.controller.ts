@@ -1,15 +1,11 @@
-import { Application } from 'express';
-import { PokedexService } from '../services/pokedex.service';
+import axios, { AxiosResponse } from 'axios';
+import { Request, Response, NextFunction } from "express";
+import { Pokemon } from '../models/interfaces/pokemon.interface';
 
-export class PokedexController {
-  private pokedexService: PokedexService;
-
-  constructor(private app: Application) {
-    this.pokedexService = new PokedexService();
-    this.routes();
-  }
-
-  public routes() {
-    this.app.route('/').get(this.pokedexService.testMessage);
-  }
+const listPokemon = async (req: Request, res: Response, next: NextFunction) => {
+  let result: AxiosResponse = await axios.get('https://pokeapi.co/api/v2/pokemon/');
+  let pokes: [Pokemon] = result.data;
+  return res.status(200).json( pokes );
 }
+
+export default { listPokemon };
